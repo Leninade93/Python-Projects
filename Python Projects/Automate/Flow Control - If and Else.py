@@ -43,6 +43,4 @@ def function4():
     print(bool('')) # False
     print(bool(' ')) # True
 
-function4()
-    
-
+#function4()

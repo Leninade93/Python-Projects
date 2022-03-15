@@ -149,8 +149,8 @@ class File_Manager():
         
 
 Welcome_GUI = Login_Page()
-Welcome_GUI.submit_button.bind('<ButtonRelease>', Welcome_GUI.login_get)
-Welcome_GUI.submit_button.bind('<Enter>', Welcome_GUI.login_get)
+Welcome_GUI.submit_button.bind('<ButtonRelease>', Welcome_GUI.login_get, add = '<ReturnPressed>')
+#Welcome_GUI.submit_button.bind('<Enter>', Welcome_GUI.login_get)
 Welcome_GUI.welcome_window.mainloop()
 
 if Welcome_GUI.authenciation_check == True:

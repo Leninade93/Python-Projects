@@ -11,3 +11,5 @@ print(obj)
 obj = concatenate_string
 print('Function call without Parentheses: ')
 print(obj)
+
+print(concatenate_string)

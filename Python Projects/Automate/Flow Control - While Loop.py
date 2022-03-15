@@ -50,4 +50,4 @@ def while_continue():
             # spam increase from 3 to 4. If we had used a break statement our output would have simply ended
         print('Spam is ' + str(spam))       
     print('Exiting loop')
-#while_continue()
+while_continue()

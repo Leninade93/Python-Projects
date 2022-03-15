@@ -16,21 +16,25 @@ def event_handling_concept():
 
         # If execution reaches this point, then there is at least one
         # event object in events_list
-        event = even_list[0]
+        event = events_list[0]
         
         if event.type == 'keypress':
             handle_keypress(event)
 
     # this loop would be running waiting for events as your window is open
 
+from cgitb import text
 import tkinter as tk
 
 window = tk.Tk()
+text_display = tk.Label(text='debug', font=('Arial', 12, 'bold'))
+text_display.pack()
 
 # Create an event handler
 def handle_keypress(event):
     # Print the character that was pressed
-    print(event.char)
+    print(event.char + ' ' + str(event.keycode))
+    text_display['text'] = event.char + ' ' + str(event.keycode)
 
 # Bind the keypress to the event handler
 # .bind() always takes atleast two arguments
