@@ -9,6 +9,7 @@
 # with xdotool
 
 from curses import window
+from re import sub
 import subprocess, sys, time
 
 # bash option -c will execute a command from a string, in this case string
@@ -43,6 +44,7 @@ while time_measurement <= 30:
     program_name = parse_runningProcesses(window_title)
     time.sleep(0.1)
     if program_name != None:
+        #subprocess.Popen(['xdotool', 'search --name', window_title])
         subprocess.Popen('xdotool search --name Peek windowminimize %@', shell = True, executable='/bin/zsh')
         break # if successful while loop will exit here
     else:
