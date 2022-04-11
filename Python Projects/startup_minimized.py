@@ -7,9 +7,6 @@
 # Creating a flexible script that can be run at stratup to execute programs
 # and minimize them based upon window name retrieved from wmctrl and minimized
 # with xdotool
-
-from curses import window
-from re import sub
 import subprocess, sys, time
 
 # bash option -c will execute a command from a string, in this case string
@@ -27,8 +24,10 @@ def parse_runningProcesses(window_name):
         # decode and splits lines are used for formatting the list
         for windows in running_programs:
             if window_name in windows:
+                print('Success! ' + windows)
                 return window_name
-
+            else:
+                print('Window title \"%s\" not found in: ' % window_name + windows)
     except(IndexError, subprocess.CalledProcessError):
         return None
         
@@ -39,16 +38,16 @@ def parse_runningProcesses(window_name):
 # one properly located
 
 window_title = str(sys.argv[2])
+shell_string = 'xdotool search --name %s' % window_title
+shell_string += ' windowminimize %@'
 time_measurement = 0
 while time_measurement <= 30:
     program_name = parse_runningProcesses(window_title)
     time.sleep(0.1)
     if program_name != None:
-        #subprocess.Popen(['xdotool', 'search --name', window_title])
-        subprocess.Popen('xdotool search --name Peek windowminimize %@', shell = True, executable='/bin/zsh')
+        subprocess.Popen(shell_string, shell = True, executable='/bin/zsh')
         break # if successful while loop will exit here
     else:
         print('Time elapsed: ' + str(time_measurement))
     time.sleep(.9)
-    time_measurement = time_measurement + 1
-print(window_title)
+    time_measurement += 1
