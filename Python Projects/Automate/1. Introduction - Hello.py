@@ -13,4 +13,4 @@ myAge = input()
 print('You will be ' + str(int(myAge)+1) + ' in a year')
 
 print(int('1234'))
-print(float('1234'))
+print(float('1234'))    
