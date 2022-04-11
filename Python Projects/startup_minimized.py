@@ -18,6 +18,7 @@ subprocess.Popen(['/bin/bash', '-c', sys.argv[1]])
 
 
 def parse_runningProcesses(window_name):
+    time.sleep(0.5)
     try:
         # using checkoutput to run a command and return it's output
         # using wmctrl to list running windows with the -l option
@@ -25,10 +26,7 @@ def parse_runningProcesses(window_name):
         # decode and splits lines are used for formatting the list
         for windows in running_programs:
             if window_name in windows:
-                return running_programs[windows].split()
-            else:
-                print('ERROR! the provided window name is not listed as running')
-                return None
+                return window_name
 
     except(IndexError, subprocess.CalledProcessError):
         return None
@@ -39,19 +37,16 @@ def parse_runningProcesses(window_name):
 # provided by wmctrl. xdotool will be called with subprocess to minimise this window
 # one properly located
 
-window_title = sys.argv[2]
+window_title = str(sys.argv[2])
 time_measurement = 0
 while time_measurement <= 30:
     program_name = parse_runningProcesses(window_title)
     time.sleep(0.1)
     if program_name != None:
-        #subprocess.Popen(['xdotool', 'windowminmized', program_name])
+        subprocess.Popen('xdotool search --name Peek windowminimize %@', shell = True, executable='/bin/zsh')
         break # if successful while loop will exit here
     else:
         print('Time elapsed: ' + str(time_measurement))
     time.sleep(.9)
     time_measurement = time_measurement + 1
-print('Timeout reached')
-
-    
-
+print(window_title)
