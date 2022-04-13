@@ -29,13 +29,12 @@ def parse_runningProcesses(window_name):
             else:
                 print('Window title \"%s\" not found in: ' % window_name + windows)
     except(IndexError, subprocess.CalledProcessError):
-        return None
-        
+        sys.exit()
 
 # need to create a loop that will run the above function while giving some time
 # for it execute successfully before searching for the window name through the list
 # provided by wmctrl. xdotool will be called with subprocess to minimise this window
-# one properly located
+# once properly located
 
 window_title = str(sys.argv[2])
 shell_string = 'xdotool search --name %s' % window_title
