@@ -1,4 +1,4 @@
-import sys, subprocess
+import sys, subprocess, os
 
 # idea would be to create a loop that runs through a directory sorting files into
 # folders based on file type
@@ -10,7 +10,10 @@ import sys, subprocess
 
 # a way to read in all file names and then search each slice of that list for extension. directory could be passed
 # as a system argument to make code modular
-files = subprocess.check_output(['ls', '/home/leninade/Downloads']).decode('utf-8').splitlines()
+
+home_dir = os.getenv('HOME')
+working_dir = home_dir + '/Downloads'
+files = subprocess.check_output(['ls', working_dir]).decode('utf-8').splitlines()
 count = 1
 for n in files:
     print(str(count) + ': ' + n)
