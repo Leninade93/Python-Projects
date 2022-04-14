@@ -1,8 +1,8 @@
 # https://askubuntu.com/questions/663187/how-can-i-run-a-program-on-startup-minimized
 # <script_filename> <command_to_run_the_application> <window_name>
-# arg0 = path to script
-# arg1 = application to run
-# arg2 = window name
+# arg0 = path to this script
+# arg1 = path to application to run
+# arg2 = part of window name for application
 
 # Creating a flexible script that can be run at stratup to execute programs
 # and minimize them based upon window name retrieved from wmctrl and minimized
