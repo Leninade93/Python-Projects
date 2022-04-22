@@ -13,7 +13,7 @@ print(randint(0, 100))
 # following statement will never execute
 print('Goodbye')
 
-# third party modules can be installed through PIP. let's installed pyperclip
+# third party modules can be installed through PIP. let's install pyperclip
 import pyperclip
 pyperclip.copy('hello world')
 # print function would not have to be used if running through idle to output the string above
