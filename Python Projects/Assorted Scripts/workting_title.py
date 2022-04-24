@@ -15,14 +15,24 @@ home_dir = os.getenv('HOME')
 working_dir = home_dir + '/Downloads'
 files = subprocess.check_output(['ls', working_dir]).decode('utf-8').splitlines()
 count = 1
+
+# change this to a case block. 
 for n in files:
-    print(str(count) + ': ' + n)
+    print(str(count) + ': ' + n, end=' || ')
     count += 1
 
     if '.jpg' in n:
-        print ('image!')
+        print ('Image')
     elif '.ttf' in n:
-        print('font!')
+        print('Font')
+    elif ('.mp4' or '.mp3') in n:
+        print('Video')
+    elif '.run' in n:
+        print('Executable')
+    elif '.docx' in n:
+        print('Word Document')
+    else:
+        print('Undefined file type detected.')
     # so now we can parse those strings for specifi cfile types
     # how do we want to handle moving? probably in this loop 
 
