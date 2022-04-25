@@ -1,8 +1,5 @@
 import sys, subprocess, os
 
-from pkg_resources import Environment
-
-
 ## PURPOSED IDEAS: #######################################################################################################
 # idea would be to create a loop that runs through a directory sorting files into
 # folders based on file type
@@ -10,8 +7,9 @@ from pkg_resources import Environment
 # folders would need to be created based upon file extension. Need to check if that folder
 # already exists so it isn't overwritten?
 
-# a way to read in all file names and then search each slice of that list for extension. directory could be passed
-# as a system argument to make code modular
+# 4/25/22 Read in file types and create folders for each of those desginated file types. Compare that 
+# already named directories to avoid overwriting exisitng directories.
+# From there it should be just moving the files to their corresponding directories.
 #########################################################################################################################
 
 home_dir = os.getenv('HOME')
@@ -37,15 +35,13 @@ def File_Type_Lookup():
             print('Word Document')
         else:
             print('Undefined file type detected.')                                                                                                                                                                                                  
-        # so now we can parse those strings for specifi cfile types
-        # how do we want to handle moving? probably in this loop
+
 
 def Directory_Sort():
     working_dir = '/home/leninade/Downloads/Test\ Directory'
-    shell_cmd = 'ls ' + working_dir + ' -al'
+    shell_cmd = 'ls ' + working_dir + ' -l'
     files = subprocess.check_output(shell_cmd, shell = True).decode('utf-8').splitlines()
     
-
     count = 1
     directories = []
     print('\nDirectories detected: ')
@@ -68,8 +64,5 @@ def case_test():
 # Run
 File_Type_Lookup()
 Directory_Sort()
-# movement of those files into subsequent folders
-
-# something like ls >> some type of storage. then mkdir EXTENSION. mv OR cp DIRECTORY
 
 
