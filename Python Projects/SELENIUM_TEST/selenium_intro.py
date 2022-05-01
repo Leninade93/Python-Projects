@@ -2,7 +2,8 @@
 ## https://www.selenium.dev/documentation/webdriver/
 ## https://www.tutorialspoint.com/python/python_command_line_arguments.htm
 
-import sys, getopt
+import sys, getopt, os
+from turtle import home
 from selenium import webdriver
 from selenium.webdriver.common.keys import *
 from selenium.webdriver.common.by import By
@@ -29,19 +30,18 @@ class Webpage_Search:
         # Get all the text and print it out available with tag name 'p'
         # Print out text to file
         elements = driver.find_elements(By.TAG_NAME, 'p')
-        f = open("/home/leninade/Documents/Python Projects/SELENIUM_TESTING/test.txt", 'w')
-        test_string = ''
+        home_dir = os.getenv('HOME')
+        f = open((home_dir + '/Documents/example_search.txt'), 'w') 
+        text_string = ''
+        f.write("Body Paragraph: " + text_string + '\n')
         for e in elements:
-            test_string = test_string + e.text
-        f.write("Body Paragraph: " + test_string + '\n')
-
+            text_string = text_string + e.text
+            
         # Returns text of h1 of the element
         attr = driver.find_element(By.CSS_SELECTOR, "h1").text
         f.write('Header: ' + attr)
         f.close()
 
-        
-  
 
 ## Executing main function where output is determined by command line arguments
 def main(n):
