@@ -1,9 +1,0 @@
-Employee Lists:
-EID, First Name, Last Name, Phone Number, Birthday, Address, Email, Employee ID, Hiring Date, Job Title 
-0,Drake, Oneal, 972-375-9669, 8/20/1989, Main Street Texas Irving 75014, Drake_Oneal@mail.com, 000, 12/3/2015, Chief Executive Officer
-1,Alice, Gilmore, 214-458-3336, 9/1/1970, Ocean Avenue Texas Garland 75040, Alice_Gilmore@mail.com, 001, 12/3/2015, Chief Financial Officer
-2,Ariana, Reynolds, 972-111-7139, 4/26/1981, Rodeo Drive Texas Dallas 75201, Ariana_Reynolds@mail.com, 002, 12/8/2015, Chief Accountant
-3,Nash, Fletcher, 972-380-8540, 6/12/1989, Fifth Avenue Texas Mesquite 75150, Nash_Fletcher@mail.com, 003, 1/16/2016, Sales Associate
-4,Tamara, Weber, 214-985-4729, 11/10/1972, Maretplace Way Texas Arlington 76001, Tamara_Weber@mail.com, 004, 2/21/2016, Sales Associate
-5,Randall, Mcgee, 214-101-3380, 5/8/1986, Abbey Road Texas Plano 75023, Randall_Mcgee@mail.com, 005, 4/30/2016, Accounts Receivable/Payable
-6,Mitchell, Hansen, 972-476-3658, 6/12/1997, Third Street Texas Arlington 76001, Mitchell_Hansen@mail.com, 006, 7/6/2016, Clerk
