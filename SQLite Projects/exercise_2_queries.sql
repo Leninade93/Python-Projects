@@ -45,6 +45,6 @@ SELECT name, imdb_rating,
   WHEN imdb_rating > 6 THEN 'Poorly Received'
   ELSE 'Avoid at All Costs'
  END AS 'Review'
-FROM movies
+FROM movies 
 ORDER BY imdb_rating DESC;
 
