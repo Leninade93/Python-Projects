@@ -1,4 +1,4 @@
-!#/bin/bash  
+#!/bin/bash  
 
 let a=879
 echo -n "The value of \"a\" is now: "
